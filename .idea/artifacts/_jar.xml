@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="开发小工具:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/开发小工具_jar</output-path>
+    <root id="archive" name="JavaFXDemo.jar">
+      <element id="module-output" name="JavaFXDemo" />
+    </root>
+  </artifact>
+</component>
