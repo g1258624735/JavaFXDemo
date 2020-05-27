@@ -10,11 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import sample.jsonformat.Json2FormatGridPane;
 import sample.jsonformat.JsonFormatGridPane;
 import sample.layoutParas.ViewSaxHandler;
-
-import java.net.URL;
-
 public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -29,7 +27,7 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image("1.jpg"));
         TabPane tabPane = new TabPane();
         BorderPane borderPane = new BorderPane();
-        String[] arrTitle = {"JSON(定制)格式化", "一键生成代码", "获取布局文件ID", "通用json格式化工具"};
+        String[] arrTitle = {"JSON(定制)格式化", "一键生成代码", "获取布局文件ID", "通用json格式化工具","去除JSON空格"};
         for (int i = 0; i < arrTitle.length; i++) {
             String navigation_bar_name = arrTitle[i];
             Tab tab = new Tab();
@@ -50,6 +48,9 @@ public class Main extends Application {
                 case 3:
                     scrollPane = new JsonFormatGridPane();
                     break;
+                case 4:
+                    scrollPane = new Json2FormatGridPane();
+                    break;
                 default:
                     break;
             }
@@ -65,11 +66,11 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    private class MyGridPane2 extends GridPane {
+    private static class MyGridPane2 extends GridPane {
 
-        protected final Button btn;
+        final Button btn;
 
-        public MyGridPane2() {
+        MyGridPane2() {
             this.setVgap(4);
             this.setHgap(10);
             this.setPadding(new Insets(5, 5, 5, 5));
@@ -95,8 +96,8 @@ public class Main extends Application {
 
     }
 
-    private class MyGridPane3 extends MyGridPane {
-        public MyGridPane3() {
+    private static class MyGridPane3 extends MyGridPane {
+        MyGridPane3() {
             super();
             btn.setText("获取布局Id列表");
             btn.setOnAction((ActionEvent e) -> {
@@ -107,8 +108,4 @@ public class Main extends Application {
             });
         }
     }
-
-
-
-
 }

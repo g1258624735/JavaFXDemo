@@ -24,7 +24,9 @@ public class JSONUtils {
      * 格式化json 字符串
      */
     private String format(String str) {
-        StringBuffer out = new StringBuffer();
+        str = str.replace("/n", "");
+        str = str.replace(" ", "");
+        StringBuilder out = new StringBuilder();
         System.out.println(str);
         int level = 0;
         int i, j;

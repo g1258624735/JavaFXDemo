@@ -1,10 +1,6 @@
 package sample.layoutParas;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
+import com.intellij.icons.AllIcons;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -13,7 +9,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -26,7 +21,7 @@ import java.util.List;
 public class ViewSaxHandler extends DefaultHandler {
     private List<ViewPart> viewPartList;
     private String layoutPath = "";
-    private Project project;
+    private AllIcons.Welcome.Project project;
 
 //    public static void main(String[] args) {
 //        String str = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
@@ -144,12 +139,12 @@ public class ViewSaxHandler extends DefaultHandler {
         this.layoutPath = layoutPath;
     }
 
-    public Project getProject() {
+    public AllIcons.Welcome.Project getProject() {
         return project;
     }
 
     //
-    public void setProject(Project project) {
+    public void setProject(AllIcons.Welcome.Project project) {
         this.project = project;
     }
 }
